@@ -119,10 +119,10 @@ const Index = () => {
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto text-center max-w-4xl">
           <h2 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Проект Создания Волшебства
+            The Magic Creation Project
           </h2>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
-            Изделия ручной работы, созданные с любовью: смола, вязание, керамика и многое другое
+            Handmade art created with love: resin, knitting, ceramics and more
           </p>
           <Button size="lg" className="animate-scale-in">
             <Icon name="Mail" className="mr-2" size={20} />
