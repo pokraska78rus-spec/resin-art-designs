@@ -361,33 +361,50 @@ const Index = () => {
       </section>
 
       <section id="contact" className="py-20 px-6">
-        <div className="container mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold mb-6">Готовы заказать уникальное изделие?</h2>
-          <p className="text-muted-foreground text-lg mb-8">
-            Свяжитесь со мной для обсуждения вашего проекта. Каждое изделие создаётся индивидуально под ваши пожелания.
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold text-center mb-6">Готовы заказать уникальное изделие?</h2>
+          <p className="text-muted-foreground text-lg mb-12 text-center">
+            Свяжитесь с нашими мастерами для обсуждения вашего проекта. Каждое изделие создаётся индивидуально под ваши пожелания.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="w-full sm:w-auto">
-              <Icon name="Mail" className="mr-2" size={20} />
-              info@resincraft.ru
-            </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto">
-              <Icon name="Phone" className="mr-2" size={20} />
-              +7 (999) 123-45-67
-            </Button>
-          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4 text-center p-6 rounded-lg border border-border">
+              <h3 className="text-2xl font-bold">Андрей</h3>
+              <p className="text-muted-foreground">Мастер по работе со смолой</p>
+              <div className="flex flex-col gap-3 pt-4">
+                <Button size="lg" asChild className="w-full">
+                  <a href="tel:+79052520296">
+                    <Icon name="Phone" className="mr-2" size={20} />
+                    +7 (905) 252-02-96
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="w-full">
+                  <a href="https://t.me/+79052520296" target="_blank" rel="noopener noreferrer">
+                    <Icon name="Send" className="mr-2" size={20} />
+                    Telegram
+                  </a>
+                </Button>
+              </div>
+            </div>
 
-          <div className="flex gap-6 justify-center">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Icon name="Instagram" size={28} />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Icon name="Send" size={28} />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Icon name="Facebook" size={28} />
-            </a>
+            <div className="space-y-4 text-center p-6 rounded-lg border border-border">
+              <h3 className="text-2xl font-bold">Ольга</h3>
+              <p className="text-muted-foreground">Мастер вязания и керамики</p>
+              <div className="flex flex-col gap-3 pt-4">
+                <Button size="lg" asChild className="w-full">
+                  <a href="tel:+79218958909">
+                    <Icon name="Phone" className="mr-2" size={20} />
+                    +7 (921) 895-89-09
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="w-full">
+                  <a href="https://t.me/+79218958909" target="_blank" rel="noopener noreferrer">
+                    <Icon name="Send" className="mr-2" size={20} />
+                    Telegram
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
