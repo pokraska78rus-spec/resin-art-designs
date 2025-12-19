@@ -35,7 +35,7 @@ const Index = () => {
       id: 3,
       title: 'Зеркальная сказка',
       category: 'coasters',
-      image: 'https://cdn.poehali.dev/projects/b36eeb0d-1e82-41ad-b9f9-74898f02ef21/files/d874fbe5-d324-420d-a9a7-6bf09c83ce80.jpg',
+      image: 'https://cdn.poehali.dev/projects/b36eeb0d-1e82-41ad-b9f9-74898f02ef21/files/221e5ac5-ab97-41fd-9e1d-52127e0803bd.jpg',
       description: 'Настенные зеркала ручной работы',
       details: 'Эксклюзивные зеркала с авторским оформлением. Каждое изделие создаётся вручную с использованием натуральных материалов и декоративных элементов.',
       price: 'от 3 500 ₽'
