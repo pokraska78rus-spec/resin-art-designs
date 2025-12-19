@@ -111,7 +111,7 @@ const Index = () => {
             Проект Создания Волшебства
           </h2>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
-            Уникальные предметы интерьера, которые преображают пространство
+            Изделия ручной работы, созданные с любовью: смола, вязание, керамика и многое другое
           </p>
           <Button size="lg" className="animate-scale-in">
             <Icon name="Mail" className="mr-2" size={20} />
