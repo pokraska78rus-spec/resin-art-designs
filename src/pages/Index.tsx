@@ -31,7 +31,8 @@ const Index = () => {
       details: 'Диаметр: 35 см. Массив дерева, эпоксидная смола с металлическими пигментами. Бесшумный механизм.',
       price: 'от 8 500 ₽',
       gallery: [
-        'https://cdn.poehali.dev/files/IMG_20250522_111614.jpg'
+        'https://cdn.poehali.dev/files/IMG_20250522_111614.jpg',
+        'https://cdn.poehali.dev/files/IMG_20250518_151112.jpg'
       ]
     },
     {
@@ -273,7 +274,7 @@ const Index = () => {
                     <p className="text-sm text-primary mt-2">+ Скульптура "След времени" (под заказ)</p>
                   )}
                   {currentProject?.gallery && currentProject.gallery.length > 0 && currentProject.id === 2 && (
-                    <p className="text-sm text-primary mt-2">+ Resin Art Watch</p>
+                    <p className="text-sm text-primary mt-2">+ Resin Art Watch, Застывший момент</p>
                   )}
                 </div>
 
@@ -289,9 +290,14 @@ const Index = () => {
                         </p>
                       )}
                       {currentProject?.gallery && currentProject.gallery.length > 0 && currentProject.id === 2 && (
-                        <p className="text-sm text-muted-foreground mt-2">
-                          <strong>Resin Art Watch:</strong> Круглые настенные часы из натурального дерева с эпоксидной смолой. Римские цифры, деревянные стрелки. Уникальный рисунок древесины делает каждые часы неповторимыми.
-                        </p>
+                        <>
+                          <p className="text-sm text-muted-foreground mt-2">
+                            <strong>Resin Art Watch:</strong> Круглые настенные часы из натурального дерева с эпоксидной смолой. Римские цифры, деревянные стрелки. Уникальный рисунок древесины делает каждые часы неповторимыми.
+                          </p>
+                          <p className="text-sm text-muted-foreground mt-2">
+                            <strong>Застывший момент:</strong> Настенные часы с янтарной эпоксидной смолой и фрагментами коры. Прозрачная смола создаёт эффект глубины, римские цифры и контрастные стрелки подчёркивают естественную красоту материалов.
+                          </p>
+                        </>
                       )}
                     </div>
                   </div>
