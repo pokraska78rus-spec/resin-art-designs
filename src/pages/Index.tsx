@@ -279,7 +279,7 @@ const Index = () => {
                       <p className="text-sm text-muted-foreground">{currentProject?.details}</p>
                       {currentProject?.gallery && currentProject.gallery.length > 0 && (
                         <p className="text-sm text-muted-foreground mt-2">
-                          <strong>След времени:</strong> Уникальная композиция из эпоксидной смолы в сине-серых тонах. Переплетение органических форм создаёт ощущение движения и текучести.
+                          <strong>След времени:</strong> Уникальная композиция из бетона в сине-серых тонах. Переплетение органических форм создаёт ощущение движения и текучести.
                         </p>
                       )}
                     </div>
