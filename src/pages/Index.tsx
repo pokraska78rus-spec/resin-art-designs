@@ -29,7 +29,10 @@ const Index = () => {
       image: 'https://cdn.poehali.dev/projects/b36eeb0d-1e82-41ad-b9f9-74898f02ef21/files/db482a87-1d1d-44ad-aad3-63a5509d4035.jpg',
       description: 'Настенные часы с янтарной смолой, древесным срезом и золотыми вкраплениями',
       details: 'Диаметр: 35 см. Массив дерева, эпоксидная смола с металлическими пигментами. Бесшумный механизм.',
-      price: 'от 8 500 ₽'
+      price: 'от 8 500 ₽',
+      gallery: [
+        'https://cdn.poehali.dev/files/IMG_20250522_111614.jpg'
+      ]
     },
     {
       id: 3,
@@ -266,8 +269,11 @@ const Index = () => {
                     )}
                   </div>
                   <p className="text-muted-foreground">{currentProject?.description}</p>
-                  {currentProject?.gallery && currentProject.gallery.length > 0 && (
+                  {currentProject?.gallery && currentProject.gallery.length > 0 && currentProject.id === 5 && (
                     <p className="text-sm text-primary mt-2">+ Скульптура "След времени" (под заказ)</p>
+                  )}
+                  {currentProject?.gallery && currentProject.gallery.length > 0 && currentProject.id === 2 && (
+                    <p className="text-sm text-primary mt-2">+ Resin Art Watch</p>
                   )}
                 </div>
 
@@ -277,9 +283,14 @@ const Index = () => {
                     <div>
                       <p className="font-medium mb-1">Детали изделия</p>
                       <p className="text-sm text-muted-foreground">{currentProject?.details}</p>
-                      {currentProject?.gallery && currentProject.gallery.length > 0 && (
+                      {currentProject?.gallery && currentProject.gallery.length > 0 && currentProject.id === 5 && (
                         <p className="text-sm text-muted-foreground mt-2">
                           <strong>След времени:</strong> Уникальная композиция из бетона в сине-серых тонах. Переплетение органических форм создаёт ощущение движения и текучести.
+                        </p>
+                      )}
+                      {currentProject?.gallery && currentProject.gallery.length > 0 && currentProject.id === 2 && (
+                        <p className="text-sm text-muted-foreground mt-2">
+                          <strong>Resin Art Watch:</strong> Круглые настенные часы из натурального дерева с эпоксидной смолой. Римские цифры, деревянные стрелки. Уникальный рисунок древесины делает каждые часы неповторимыми.
                         </p>
                       )}
                     </div>
