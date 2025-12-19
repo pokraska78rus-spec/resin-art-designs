@@ -316,14 +316,24 @@ const Index = () => {
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-4xl font-bold text-center mb-16">Процесс создания</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
+                <Icon name="MessageCircle" className="text-primary" size={28} />
+              </div>
+              <h3 className="text-xl font-semibold">1. Обсуждение идеи</h3>
+              <p className="text-muted-foreground">
+                Выбираем направление: смола, вязание, керамика или комбинация
+              </p>
+            </div>
+
             <div className="text-center space-y-4">
               <div className="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
                 <Icon name="Pencil" className="text-primary" size={28} />
               </div>
-              <h3 className="text-xl font-semibold">1. Эскиз и планирование</h3>
+              <h3 className="text-xl font-semibold">2. Эскиз проекта</h3>
               <p className="text-muted-foreground">
-                Обсуждаем концепцию, размеры и цветовую гамму будущего изделия
+                Создаём дизайн, подбираем цвета, материалы и размеры изделия
               </p>
             </div>
 
@@ -331,9 +341,9 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
                 <Icon name="Hammer" className="text-primary" size={28} />
               </div>
-              <h3 className="text-xl font-semibold">2. Подготовка материалов</h3>
+              <h3 className="text-xl font-semibold">3. Изготовление</h3>
               <p className="text-muted-foreground">
-                Выбор древесины, подготовка формы и смешивание смолы с пигментами
+                Работа мастеров: заливка смолы, вязание, лепка или роспись керамики
               </p>
             </div>
 
@@ -341,9 +351,9 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
                 <Icon name="Sparkles" className="text-primary" size={28} />
               </div>
-              <h3 className="text-xl font-semibold">3. Заливка и финиш</h3>
+              <h3 className="text-xl font-semibold">4. Финальная отделка</h3>
               <p className="text-muted-foreground">
-                Послойная заливка, полировка и нанесение защитного покрытия
+                Полировка, защитное покрытие и упаковка готового изделия
               </p>
             </div>
           </div>
