@@ -207,7 +207,7 @@ const Index = () => {
                 <img
                   src={currentProject?.gallery?.[galleryIndex] || currentProject?.image}
                   alt={currentProject?.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain md:object-cover bg-muted"
                 />
                 
                 {currentProject?.gallery && currentProject.gallery.length > 1 && (
