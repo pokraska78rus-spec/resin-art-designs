@@ -9,6 +9,7 @@ const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   const projects = [
     {
@@ -55,16 +56,11 @@ const Index = () => {
       image: 'https://cdn.poehali.dev/projects/b36eeb0d-1e82-41ad-b9f9-74898f02ef21/files/c3d15778-f2d8-4ec5-b7bc-2cc6ac27fbf1.jpg',
       description: 'Дизайнерские горшки ручной работы: керамика, бетон, авторская роспись',
       details: 'Размеры от 10 до 40 см. Керамика с глазурью, минималистичный бетон, геометрические узоры.',
-      price: 'от 1 800 ₽'
-    },
-    {
-      id: 6,
-      title: 'След времени',
-      category: 'pots',
-      image: 'https://cdn.poehali.dev/files/IMG_20240824_130455.jpg',
-      description: 'Авторская скульптура из эпоксидной смолы с эффектом застывшего времени',
-      details: 'Уникальная композиция в сине-серых тонах. Переплетение органических форм создаёт ощущение движения и текучести. Ручная работа, каждая деталь неповторима.',
-      price: 'под заказ'
+      price: 'от 1 800 ₽',
+      gallery: [
+        'https://cdn.poehali.dev/files/IMG_20240824_130455.jpg',
+        'https://cdn.poehali.dev/files/IMG_20240824_130507.jpg'
+      ]
     }
   ];
 
@@ -74,6 +70,7 @@ const Index = () => {
 
   const openLightbox = (id: number) => {
     setSelectedImage(id);
+    setGalleryIndex(0);
     setLightboxOpen(true);
   };
 
@@ -204,34 +201,57 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-0">
               <div className="relative aspect-square md:aspect-auto">
                 <img
-                  src={currentProject?.image}
+                  src={currentProject?.gallery?.[galleryIndex] || currentProject?.image}
                   alt={currentProject?.title}
                   className="w-full h-full object-cover"
                 />
                 
-                <div className="absolute inset-y-0 left-0 flex items-center">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigateImage('prev');
-                    }}
-                    className="m-4 p-3 rounded-full bg-background/80 hover:bg-background backdrop-blur-sm transition-colors"
-                  >
-                    <Icon name="ChevronLeft" size={24} />
-                  </button>
-                </div>
+                {currentProject?.gallery && currentProject.gallery.length > 1 && (
+                  <>
+                    <div className="absolute inset-y-0 left-0 flex items-center">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setGalleryIndex((prev) => 
+                            prev === 0 ? (currentProject.gallery?.length || 1) - 1 : prev - 1
+                          );
+                        }}
+                        className="m-4 p-3 rounded-full bg-background/80 hover:bg-background backdrop-blur-sm transition-colors"
+                      >
+                        <Icon name="ChevronLeft" size={24} />
+                      </button>
+                    </div>
 
-                <div className="absolute inset-y-0 right-0 flex items-center">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigateImage('next');
-                    }}
-                    className="m-4 p-3 rounded-full bg-background/80 hover:bg-background backdrop-blur-sm transition-colors"
-                  >
-                    <Icon name="ChevronRight" size={24} />
-                  </button>
-                </div>
+                    <div className="absolute inset-y-0 right-0 flex items-center">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setGalleryIndex((prev) => 
+                            prev === (currentProject.gallery?.length || 1) - 1 ? 0 : prev + 1
+                          );
+                        }}
+                        className="m-4 p-3 rounded-full bg-background/80 hover:bg-background backdrop-blur-sm transition-colors"
+                      >
+                        <Icon name="ChevronRight" size={24} />
+                      </button>
+                    </div>
+                    
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                      {currentProject.gallery.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setGalleryIndex(idx);
+                          }}
+                          className={`w-2 h-2 rounded-full transition-all ${
+                            idx === galleryIndex ? 'bg-primary w-8' : 'bg-white/50'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
 
               <div className="p-8 md:p-12 flex flex-col justify-center space-y-6">
@@ -246,6 +266,9 @@ const Index = () => {
                     )}
                   </div>
                   <p className="text-muted-foreground">{currentProject?.description}</p>
+                  {currentProject?.gallery && currentProject.gallery.length > 0 && (
+                    <p className="text-sm text-primary mt-2">+ Скульптура "След времени" (под заказ)</p>
+                  )}
                 </div>
 
                 <div className="space-y-4">
@@ -254,6 +277,11 @@ const Index = () => {
                     <div>
                       <p className="font-medium mb-1">Детали изделия</p>
                       <p className="text-sm text-muted-foreground">{currentProject?.details}</p>
+                      {currentProject?.gallery && currentProject.gallery.length > 0 && (
+                        <p className="text-sm text-muted-foreground mt-2">
+                          <strong>След времени:</strong> Уникальная композиция из эпоксидной смолы в сине-серых тонах. Переплетение органических форм создаёт ощущение движения и текучести.
+                        </p>
+                      )}
                     </div>
                   </div>
 
