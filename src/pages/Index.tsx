@@ -227,7 +227,15 @@ const Index = () => {
 
               <div className="p-8 md:p-12 flex flex-col justify-center space-y-6">
                 <div>
-                  <h3 className="text-3xl font-bold mb-2">{currentProject?.title}</h3>
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-3xl font-bold">{currentProject?.title}</h3>
+                    {currentProject?.inDevelopment && (
+                      <div className="bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                        <Icon name="Wrench" size={14} />
+                        В разработке
+                      </div>
+                    )}
+                  </div>
                   <p className="text-muted-foreground">{currentProject?.description}</p>
                 </div>
 
