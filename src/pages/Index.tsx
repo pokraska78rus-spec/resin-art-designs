@@ -122,7 +122,7 @@ const Index = () => {
             The Magic Creation Project
           </h2>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
-            Handmade art created with love: resin, knitting, ceramics and more
+            Изделия ручной работы, созданные с любовью: смола, вязание, керамика и многое другое
           </p>
           <Button size="lg" className="animate-scale-in">
             <Icon name="Mail" className="mr-2" size={20} />
