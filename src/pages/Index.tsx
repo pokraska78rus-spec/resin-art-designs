@@ -18,7 +18,8 @@ const Index = () => {
       image: 'https://cdn.poehali.dev/projects/b36eeb0d-1e82-41ad-b9f9-74898f02ef21/files/8a0e69e4-9697-46a1-ab69-768e4a400a5b.jpg',
       description: 'Эпоксидный стол с эффектом реки, деревянные края и янтарная смола',
       details: 'Размеры: 180×90 см. Массив дуба и прозрачная эпоксидная смола с металлическим пигментом.',
-      price: 'от 45 000 ₽'
+      price: 'от 45 000 ₽',
+      inDevelopment: true
     },
     {
       id: 2,
@@ -149,6 +150,12 @@ const Index = () => {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
+                  {project.inDevelopment && (
+                    <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                      <Icon name="Wrench" size={14} />
+                      В разработке
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                       <div className="flex items-center gap-2 text-primary mb-2">
